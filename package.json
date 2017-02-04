@@ -1,0 +1,22 @@
+{
+  "name": "webpack-rollup-loader",
+  "version": "0.0.1",
+  "description": "Webpack loader that uses Rollup, which calls back into Webpack for module resolution.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikdesjardins/webpack-rollup-loader.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Erik Desjardins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erikdesjardins/webpack-rollup-loader/issues"
+  },
+  "homepage": "https://github.com/erikdesjardins/webpack-rollup-loader#readme"
+}
