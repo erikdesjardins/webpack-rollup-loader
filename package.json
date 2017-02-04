@@ -24,5 +24,10 @@
   },
   "dependencies": {
     "rollup": "^0.41.4"
+  },
+  "devDependencies": {
+    "ava": "^0.18.1",
+    "memory-fs": "^0.4.1",
+    "webpack": "^2.2.1"
   }
 }
