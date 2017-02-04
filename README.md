@@ -27,7 +27,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      use: ['babel-loader'] // babel-loader, etc. can be applied to .js files as usual
+      use: ['babel-loader'] // can be applied to .js files as usual
     }]
   }
 };
