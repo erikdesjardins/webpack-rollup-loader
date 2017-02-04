@@ -12,7 +12,7 @@ Inspired by [egoist/rollup-loader](https://github.com/egoist/rollup-loader), but
 
 ## Usage
 
-**Note:** This loader must only be applied once to the entry module. If it is applied to all `.js` files, basically anything can happen. Modules may be duplicated, Webpack may fail to terminate, and cryptic errors will likely be generated.
+**Note:** This loader must only be applied once to the entry module. If it is applied to all `.js` files, basically anything can happen. Modules may be duplicated, Webpack may fail to terminate, cryptic errors may be generated.
 
 Also, make sure that Babel is not transpiling ES6 imports to CommonJS with the `transform-es2015-modules-commonjs` plugin.
 
