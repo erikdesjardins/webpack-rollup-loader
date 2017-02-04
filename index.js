@@ -79,7 +79,7 @@ module.exports = function(source, sourceMap) {
 						return { code: source, map: sourceMap };
 					}
 
-					return { code, map: maps[id] };
+					return { code: code, map: maps[id] };
 				},
 			}],
 		})
