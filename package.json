@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/erikdesjardins/webpack-rollup-loader/issues"
   },
-  "homepage": "https://github.com/erikdesjardins/webpack-rollup-loader#readme"
+  "homepage": "https://github.com/erikdesjardins/webpack-rollup-loader#readme",
+  "peerDependencies": {
+    "webpack": "^2.2.0"
+  },
+  "dependencies": {
+    "rollup": "^0.41.4"
+  }
 }
