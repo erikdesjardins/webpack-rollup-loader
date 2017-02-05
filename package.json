@@ -1,6 +1,6 @@
 {
   "name": "webpack-rollup-loader",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Webpack loader that uses Rollup, which calls back into Webpack for module resolution.",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,18 @@
   "bugs": {
     "url": "https://github.com/erikdesjardins/webpack-rollup-loader/issues"
   },
-  "homepage": "https://github.com/erikdesjardins/webpack-rollup-loader#readme"
+  "homepage": "https://github.com/erikdesjardins/webpack-rollup-loader#readme",
+  "peerDependencies": {
+    "webpack": "^2.2.0"
+  },
+  "dependencies": {
+    "rollup": "^0.41.4"
+  },
+  "devDependencies": {
+    "ava": "^0.18.1",
+    "file-loader": "^0.10.0",
+    "memory-fs": "^0.4.1",
+    "rollup-plugin-commonjs": "^7.0.0",
+    "webpack": "^2.2.1"
+  }
 }
