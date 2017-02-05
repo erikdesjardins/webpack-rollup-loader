@@ -40,3 +40,5 @@ async function fixture(t, entry, options) {
 test('simple', fixture, 'simple.js');
 
 test('plugins option', fixture, 'fileLoader.js', { plugins: [commonjs({ extensions: ['.js', '.jpg'] })] });
+
+test('external option', fixture, 'external.js', { external: [path.join(__dirname, 'src', 'b.js')] });

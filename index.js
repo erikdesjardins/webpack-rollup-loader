@@ -28,6 +28,7 @@ module.exports = function(source, sourceMap) {
 
 	var options = this.query || {};
 	var plugins = options.plugins || [];
+	var external = options.external || [];
 
 	var entryId = this.resourcePath;
 
@@ -36,6 +37,7 @@ module.exports = function(source, sourceMap) {
 	rollup
 		.rollup({
 			entry: entryId,
+			external: external,
 			plugins: plugins.concat({
 				resolveId: function(id, importerId) {
 					if (id === entryId) {
