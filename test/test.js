@@ -1,4 +1,5 @@
 import path from 'path';
+import fs from 'fs';
 import test from 'ava';
 import webpack from 'webpack';
 import MemoryFS from 'memory-fs';
@@ -24,9 +25,9 @@ async function fixture(t, entry, options) {
 		},
 	});
 
-	const fs = new MemoryFS();
+	const mockFs = new MemoryFS();
 
-	compiler.outputFileSystem = fs;
+	compiler.outputFileSystem = mockFs;
 
 	await new Promise((resolve, reject) => {
 		compiler.run((err, stats) => {
@@ -34,7 +35,10 @@ async function fixture(t, entry, options) {
 		});
 	});
 
-	t.snapshot(fs.readFileSync(outputPath, 'utf8'));
+	t.is(
+		mockFs.readFileSync(outputPath, 'utf8'),
+		fs.readFileSync(path.join(__dirname, 'src', 'expected', entry), 'utf8')
+	);
 }
 
 test('simple', fixture, 'simple.js');
