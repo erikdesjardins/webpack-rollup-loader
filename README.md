@@ -24,9 +24,10 @@ var rollupCommonjsPlugin = require('rollup-plugin-commonjs');
 module.exports = {
   entry: 'entry.js',
   module: {
-    rules: [{
-      test: /entry.js$/,
-      use: [{
+    rules: [
+      {
+        test: /entry.js$/,
+        use: [{
         loader: 'webpack-rollup-loader',
         options: {
           // OPTIONAL: rollup plugins to add
@@ -34,11 +35,15 @@ module.exports = {
           // OPTIONAL: see rollup's `external` option
           external: ['moment']
         },
-      }]
-    }, {
-      test: /\.js$/,
-      use: ['babel-loader'] // can be applied to .js files as usual
-    }]
+        }]
+      },
+
+      // ...other rules as usual
+      {
+        test: /\.js$/,
+        use: ['babel-loader'] // can be applied to .js files as usual
+      }
+    ]
   }
 };
 ```
