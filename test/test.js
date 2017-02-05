@@ -2,20 +2,26 @@ import path from 'path';
 import test from 'ava';
 import webpack from 'webpack';
 import MemoryFS from 'memory-fs';
+import commonjs from 'rollup-plugin-commonjs';
 
-async function fixture(t, entry) {
+async function fixture(t, entry, options) {
+	const entryPath = path.join(__dirname, 'src', 'fixtures', entry);
 	const outputPath = path.join(__dirname, 'bundle.js');
 	const compiler = webpack({
-		entry: `${path.join(__dirname, '../index.js')}!${path.join(__dirname, 'src', 'fixtures', entry)}`,
+		entry: entryPath,
 		bail: true,
 		output: {
 			filename: outputPath
 		},
 		module: {
-			loaders: [
-				{ test: /exec\.js$/, loader: path.join(__dirname, '../index.js') }
-			]
-		}
+			rules: [{
+				test: entryPath,
+				use: [{
+					loader: path.join(__dirname, '../index.js'),
+					options,
+				}]
+			}],
+		},
 	});
 
 	const fs = new MemoryFS();
@@ -32,3 +38,5 @@ async function fixture(t, entry) {
 }
 
 test('simple', fixture, 'simple.js');
+
+test('plugins option', fixture, 'fileLoader.js', { plugins: [commonjs({ extensions: ['.js', '.jpg'] })] });

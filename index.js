@@ -26,6 +26,9 @@ function splitRequest(request) {
 module.exports = function(source, sourceMap) {
 	var callback = this.async();
 
+	var options = this.query || {};
+	var plugins = options.plugins || [];
+
 	var entryId = this.resourcePath;
 
 	var maps = {};
@@ -33,7 +36,7 @@ module.exports = function(source, sourceMap) {
 	rollup
 		.rollup({
 			entry: entryId,
-			plugins: [{
+			plugins: plugins.concat({
 				resolveId: function(id, importerId) {
 					if (id === entryId) {
 						return entryId;
@@ -81,7 +84,7 @@ module.exports = function(source, sourceMap) {
 
 					return { code: code, map: maps[id] };
 				}
-			}]
+			})
 		})
 		.then(function(bundle) {
 			var result = bundle.generate({ format: 'es' });
