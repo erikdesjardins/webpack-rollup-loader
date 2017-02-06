@@ -28,13 +28,13 @@ module.exports = {
       {
         test: /entry.js$/,
         use: [{
-        loader: 'webpack-rollup-loader',
-        options: {
-          // OPTIONAL: rollup plugins to add
-          plugins: [rollupCommonjsPlugin()],
-          // OPTIONAL: see rollup's `external` option
-          external: ['moment']
-        },
+          loader: 'webpack-rollup-loader',
+          options: {
+            // OPTIONAL: rollup plugins to add
+            plugins: [rollupCommonjsPlugin()],
+            // OPTIONAL: see rollup's `external` option
+            external: ['moment']
+          },
         }]
       },
 
