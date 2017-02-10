@@ -89,7 +89,7 @@ module.exports = function(source, sourceMap) {
 			})
 		})
 		.then(function(bundle) {
-			var result = bundle.generate({ format: 'es' });
+			var result = bundle.generate({ format: 'es', sourceMap: true });
 			callback(null, result.code, result.map);
 		}, function(err) {
 			callback(err);
