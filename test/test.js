@@ -36,8 +36,8 @@ async function fixture(t, entry, options) {
 	});
 
 	t.is(
-		mockFs.readFileSync(outputPath, 'utf8'),
-		fs.readFileSync(path.join(__dirname, 'src', 'expected', entry), 'utf8')
+		mockFs.readFileSync(outputPath, 'utf8').replace(/[\r\n]+/g, '\n'),
+		fs.readFileSync(path.join(__dirname, 'src', 'expected', entry), 'utf8').replace(/[\r\n]+/g, '\n')
 	);
 }
 
