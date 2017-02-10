@@ -5,15 +5,22 @@ import webpack from 'webpack';
 import MemoryFS from 'memory-fs';
 import commonjs from 'rollup-plugin-commonjs';
 
+function normalize(string) {
+	return string
+		.replace(/(\r\n|\r|\n)/g, '\n')
+		.trim();
+}
+
 async function fixture(t, entry, options) {
 	const entryPath = path.join(__dirname, 'src', 'fixtures', entry);
-	const outputPath = path.join(__dirname, 'bundle.js');
+	const outputPath = '/bundle.js';
 	const compiler = webpack({
 		entry: entryPath,
 		bail: true,
 		output: {
 			filename: outputPath
 		},
+		devtool: 'source-map',
 		module: {
 			rules: [{
 				test: entryPath,
@@ -36,8 +43,13 @@ async function fixture(t, entry, options) {
 	});
 
 	t.is(
-		mockFs.readFileSync(outputPath, 'utf8'),
-		fs.readFileSync(path.join(__dirname, 'src', 'expected', entry), 'utf8')
+		normalize(mockFs.readFileSync(outputPath, 'utf8')),
+		normalize(fs.readFileSync(path.join(__dirname, 'src', 'expected', entry), 'utf8')),
+	);
+
+	t.is(
+		normalize(mockFs.readFileSync(`${outputPath}.map`, 'utf8')),
+		normalize(fs.readFileSync(path.join(__dirname, 'src', 'expected', `${entry}.map`), 'utf8')),
 	);
 }
 

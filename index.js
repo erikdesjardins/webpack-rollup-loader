@@ -32,8 +32,6 @@ module.exports = function(source, sourceMap) {
 
 	var entryId = this.resourcePath;
 
-	var maps = {};
-
 	rollup
 		.rollup({
 			entry: entryId,
@@ -64,7 +62,7 @@ module.exports = function(source, sourceMap) {
 				}.bind(this),
 				load: function(id) {
 					if (id === entryId) {
-						return source;
+						return { code: source, map: sourceMap };
 					}
 					return new Promise(function(resolve, reject) {
 						// load the module with Webpack
@@ -74,22 +72,14 @@ module.exports = function(source, sourceMap) {
 								reject(err);
 								return;
 							}
-							maps[id] = map;
-							resolve(source);
+							resolve({ code: source, map: map });
 						});
 					}.bind(this));
 				}.bind(this),
-				transform: function(code, id) {
-					if (id === entryId) {
-						return { code: source, map: sourceMap };
-					}
-
-					return { code: code, map: maps[id] };
-				}
 			})
 		})
 		.then(function(bundle) {
-			var result = bundle.generate({ format: 'es' });
+			var result = bundle.generate({ format: 'es', sourceMap: true });
 			callback(null, result.code, result.map);
 		}, function(err) {
 			callback(err);
