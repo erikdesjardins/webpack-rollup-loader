@@ -51,12 +51,10 @@ module.exports = function(source, sourceMap) {
 							this.resolve(path.dirname(importerParts.resource), parts.resource, function(err, fullPath) {
 								if (err) {
 									reject(err);
-									return;
+								} else {
+									resolve(parts.loaders + fullPath);
 								}
-								// add dependency for watch mode
-								this.addDependency(fullPath);
-								resolve(parts.loaders + fullPath);
-							}.bind(this));
+							});
 						}.bind(this));
 					}
 				}.bind(this),
