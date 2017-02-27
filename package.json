@@ -26,8 +26,8 @@
     "rollup": "^0.41.4"
   },
   "devDependencies": {
-    "ava": "^0.18.1",
-    "file-loader": "^0.10.0",
+    "ava": "^0.18.2",
+    "file-loader": "^0.10.1",
     "memory-fs": "^0.4.1",
     "rollup-plugin-commonjs": "^7.0.0",
     "webpack": "^2.2.1"
