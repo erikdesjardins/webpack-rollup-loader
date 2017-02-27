@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/erikdesjardins/webpack-rollup-loader#readme",
   "peerDependencies": {
-    "webpack": "^2.2.0"
+    "webpack": ">=2.2.0"
   },
   "dependencies": {
     "rollup": "^0.41.4"
