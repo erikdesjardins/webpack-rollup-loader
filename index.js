@@ -28,16 +28,16 @@ function withRollupInstance(callback) {
 }
 
 function splitRequest(request) {
-	var split = request.split('!');
-	if (split.length === 1) {
+	var inx = request.lastIndexOf('!');
+	if (inx === -1) {
 		return {
 			loaders: '',
-			resource: split[0]
+			resource: request
 		};
 	} else {
 		return {
-			loaders: split[0] + '!',
-			resource: split[1]
+			loaders: request.slice(0, inx + 1),
+			resource: request.slice(inx + 1)
 		};
 	}
 }
