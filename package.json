@@ -31,6 +31,6 @@
     "file-loader": "^0.10.1",
     "memory-fs": "^0.4.1",
     "rollup-plugin-commonjs": "^7.0.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.6.1"
   }
 }

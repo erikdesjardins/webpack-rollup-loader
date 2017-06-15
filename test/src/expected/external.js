@@ -6,9 +6,9 @@
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -71,7 +71,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = 'b';
+/* harmony default export */ __webpack_exports__["a"] = ('b');
 
 
 /***/ }),
@@ -87,7 +87,7 @@ var a = 'a';
 
 var external = a + __WEBPACK_IMPORTED_MODULE_0__b_js__["a" /* default */];
 
-/* harmony default export */ __webpack_exports__["default"] = external;
+/* harmony default export */ __webpack_exports__["default"] = (external);
 
 
 /***/ })
