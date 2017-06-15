@@ -23,6 +23,7 @@
     "webpack": ">=2.2.0"
   },
   "dependencies": {
+    "import-fresh": "^2.0.0",
     "rollup": "^0.41.4"
   },
   "devDependencies": {
