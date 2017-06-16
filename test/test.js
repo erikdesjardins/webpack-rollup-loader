@@ -13,12 +13,12 @@ function normalize(string) {
 
 async function fixture(t, entry, options) {
 	const entryPath = path.join(__dirname, 'src', 'fixtures', entry);
-	const outputPath = '/bundle.js';
 	const compiler = webpack({
 		entry: entryPath,
 		bail: true,
 		output: {
-			filename: outputPath
+			path: '/',
+			filename: 'bundle.js'
 		},
 		devtool: 'source-map',
 		module: {
@@ -42,13 +42,20 @@ async function fixture(t, entry, options) {
 		});
 	});
 
+	/*
+	const bundle = mockFs.readFileSync('/bundle.js', 'utf8');
+	fs.writeFileSync(path.join(__dirname, 'src', 'expected', entry), bundle);
+	const sourcemap = mockFs.readFileSync('/bundle.js.map', 'utf8');
+	fs.writeFileSync(path.join(__dirname, 'src', 'expected', `${entry}.map`), sourcemap);
+	*/
+
 	t.is(
-		normalize(mockFs.readFileSync(outputPath, 'utf8')),
+		normalize(mockFs.readFileSync('/bundle.js', 'utf8')),
 		normalize(fs.readFileSync(path.join(__dirname, 'src', 'expected', entry), 'utf8')),
 	);
 
 	t.is(
-		normalize(mockFs.readFileSync(`${outputPath}.map`, 'utf8')),
+		normalize(mockFs.readFileSync('/bundle.js.map', 'utf8')),
 		normalize(fs.readFileSync(path.join(__dirname, 'src', 'expected', `${entry}.map`), 'utf8')),
 	);
 }
