@@ -44,9 +44,9 @@ async function fixture(t, entry, options) {
 
 	/*
 	const bundle = mockFs.readFileSync('/bundle.js', 'utf8');
-	fs.writeFileSync(path.join(__dirname, 'src', 'expected', entry), bundle);
+	fs.writeFileSync(path.join(__dirname, 'src', 'expected', entry), bundle.replace(/\r/g, ''));
 	const sourcemap = mockFs.readFileSync('/bundle.js.map', 'utf8');
-	fs.writeFileSync(path.join(__dirname, 'src', 'expected', `${entry}.map`), sourcemap);
+	fs.writeFileSync(path.join(__dirname, 'src', 'expected', `${entry}.map`), sourcemap.replace(/\\r/g, ''));
 	*/
 
 	t.is(
