@@ -2,13 +2,15 @@
 
 Webpack loader that uses Rollup, which calls back into Webpack for module resolution.
 
-Supports Webpack 2 only.
-
 Inspired by [egoist/rollup-loader](https://github.com/egoist/rollup-loader), but because this loader uses Webpack's module resolution, Rollup is able to hoist the output of non-js loaders, such as filenames from `file-loader`.
 
 ## Installation
   
 `npm install --save-dev webpack-rollup-loader`
+
+Rollup is a peer dependency, and must also be installed:
+
+`npm install --save-dev rollup`
 
 ## Usage
 
