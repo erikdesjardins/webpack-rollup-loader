@@ -37,7 +37,7 @@ module.exports = function(source, sourceMap) {
 	var entryId = this.resourcePath;
 
 	getRollupInstance().rollup({
-		entry: entryId,
+		input: entryId,
 		external: external,
 		plugins: plugins.concat({
 			resolveId: function(id, importerId) {
@@ -80,7 +80,7 @@ module.exports = function(source, sourceMap) {
 		})
 	})
 	.then(function(bundle) {
-		return bundle.generate({ format: 'es', sourceMap: true });
+		return bundle.generate({ format: 'es', sourcemap: true });
 	})
 	.then(function(result) {
 		callback(null, result.code, result.map);
