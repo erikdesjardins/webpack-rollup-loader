@@ -32,9 +32,9 @@ module.exports = {
         use: [{
           loader: 'webpack-rollup-loader',
           options: {
-            // OPTIONAL: rollup plugins to add
+            // OPTIONAL: any rollup options (except `entry`)
+            // e.g.
             plugins: [rollupCommonjsPlugin()],
-            // OPTIONAL: see rollup's `external` option
             external: ['moment']
           },
         }]
