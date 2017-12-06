@@ -31,15 +31,12 @@ module.exports = function(source, sourceMap) {
 	var callback = this.async();
 
 	var options = this.query || {};
-	var plugins = options.plugins || [];
-	var external = options.external || [];
 
 	var entryId = this.resourcePath;
 
-	getRollupInstance().rollup({
+	getRollupInstance().rollup(Object.assign({}, options, {
 		input: entryId,
-		external: external,
-		plugins: plugins.concat({
+		plugins: (options.plugins || []).concat({
 			resolveId: function(id, importerId) {
 				if (id === entryId) {
 					return entryId;
@@ -78,7 +75,7 @@ module.exports = function(source, sourceMap) {
 				}.bind(this));
 			}.bind(this),
 		})
-	})
+	}))
 	.then(function(bundle) {
 		return bundle.generate({ format: 'es', sourcemap: true });
 	})
