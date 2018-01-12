@@ -32,9 +32,7 @@ module.exports = {
           options: {
             // OPTIONAL: any rollup options (except `entry`)
             // e.g.
-            plugins: [/* rollup plugins... */],
             external: [/* modules that shouldn't be rollup'd */]
-            // ...
           },
         }]
       },
