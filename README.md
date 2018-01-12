@@ -2,7 +2,7 @@
 
 Webpack loader that uses Rollup, which calls back into Webpack for module resolution.
 
-Inspired by [egoist/rollup-loader](https://github.com/egoist/rollup-loader), but because this loader uses Webpack's module resolution, Rollup is able to hoist the output of non-js loaders, such as filenames from `file-loader`.
+Inspired by [egoist/rollup-loader](https://github.com/egoist/rollup-loader).
 
 ## Installation
   
