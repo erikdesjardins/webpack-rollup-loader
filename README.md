@@ -2,7 +2,7 @@
 
 Webpack loader that uses Rollup, which calls back into Webpack for module resolution.
 
-Inspired by [egoist/rollup-loader](https://github.com/egoist/rollup-loader), but because this loader uses Webpack's module resolution, Rollup is able to hoist the output of non-js loaders, such as filenames from `file-loader`.
+Inspired by [egoist/rollup-loader](https://github.com/egoist/rollup-loader).
 
 ## Installation
   
@@ -21,8 +21,6 @@ Also, make sure that Babel is not transpiling ES6 imports to CommonJS with the `
 **webpack.config.js:**
 
 ```js
-var rollupCommonjsPlugin = require('rollup-plugin-commonjs');
-
 module.exports = {
   entry: 'entry.js',
   module: {
@@ -34,8 +32,7 @@ module.exports = {
           options: {
             // OPTIONAL: any rollup options (except `entry`)
             // e.g.
-            plugins: [rollupCommonjsPlugin()],
-            external: ['moment']
+            external: [/* modules that shouldn't be rollup'd */]
           },
         }]
       },
