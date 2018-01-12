@@ -21,8 +21,6 @@ Also, make sure that Babel is not transpiling ES6 imports to CommonJS with the `
 **webpack.config.js:**
 
 ```js
-var rollupCommonjsPlugin = require('rollup-plugin-commonjs');
-
 module.exports = {
   entry: 'entry.js',
   module: {
@@ -34,8 +32,9 @@ module.exports = {
           options: {
             // OPTIONAL: any rollup options (except `entry`)
             // e.g.
-            plugins: [rollupCommonjsPlugin()],
-            external: ['moment']
+            plugins: [/* rollup plugins... */],
+            external: [/* modules that shouldn't be rollup'd */]
+            // ...
           },
         }]
       },
