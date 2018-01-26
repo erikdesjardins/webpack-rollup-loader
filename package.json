@@ -21,7 +21,7 @@
   "homepage": "https://github.com/erikdesjardins/webpack-rollup-loader#readme",
   "peerDependencies": {
     "webpack": ">=3.3.0",
-    "rollup": ">=0.50.0"
+    "rollup": ">=0.55.1"
   },
   "dependencies": {
     "import-fresh": "^2.0.0"
@@ -30,7 +30,7 @@
     "ava": "^0.21.0",
     "file-loader": "^0.11.2",
     "memory-fs": "^0.4.1",
-    "rollup": "^0.50.0",
+    "rollup": "^0.55.1",
     "rollup-plugin-commonjs": "^8.1.0",
     "webpack": "^3.3.0"
   }
