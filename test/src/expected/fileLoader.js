@@ -69,10 +69,10 @@
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hi", function() { return hi; });
-var hi$1 = __webpack_require__.p + "hi.jpg";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hi", function() { return hi$1; });
+var hi = __webpack_require__.p + "hi.jpg";
 
-const hi = hi$1;
+const hi$1 = hi;
 
 
 
