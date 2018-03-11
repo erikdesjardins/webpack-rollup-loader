@@ -20,6 +20,7 @@ async function fixture(t, entry, options) {
 			path: '/',
 			filename: 'bundle.js'
 		},
+		mode: 'development',
 		devtool: 'source-map',
 		module: {
 			rules: [{
