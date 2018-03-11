@@ -38,7 +38,7 @@ async function fixture(t, entry, options) {
 
 	await new Promise((resolve, reject) => {
 		compiler.run((err, stats) => {
-			err ? reject(err) : resolve(stats);
+			stats.hasErrors() ? reject(stats.toString()) : resolve(stats);
 		});
 	});
 
