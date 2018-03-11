@@ -27,11 +27,11 @@
     "import-fresh": "^2.0.0"
   },
   "devDependencies": {
-    "ava": "^0.21.0",
-    "file-loader": "^0.11.2",
+    "ava": "^0.25.0",
+    "file-loader": "^1.1.11",
     "memory-fs": "^0.4.1",
-    "rollup": "^0.55.1",
-    "rollup-plugin-commonjs": "^8.1.0",
-    "webpack": "^3.3.0"
+    "rollup": "^0.56.5",
+    "rollup-plugin-commonjs": "^9.0.0",
+    "webpack": "^4.1.1"
   }
 }
