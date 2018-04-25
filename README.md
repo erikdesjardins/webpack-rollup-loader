@@ -14,7 +14,7 @@ Rollup is a peer dependency, and must also be installed:
 
 ## Usage
 
-**Note:** This loader must only be applied once to the entry module. Using it to load all `.js` files (or even just recursively) has undefined behaviour and will probably spawn nasal demons.
+**Note:** This loader must only be applied once to the entry module. Using it to load all `.js` files (or even just recursively) has undefined behaviour and is likely to produce horrendously incorrect code.
 
 Also, make sure that Babel is not compiling ES6 imports to CommonJS with the `transform-es2015-modules-commonjs` plugin.
 
