@@ -6,11 +6,7 @@
 'use strict';
 
 var path = require('path');
-var importFresh = require('import-fresh');
-// Rollup seems to have global state, so get a fresh instance for every run...
-function getRollupInstance() {
-	return importFresh('rollup');
-}
+var rollup = require('rollup').rollup;
 
 function splitRequest(request) {
 	var inx = request.lastIndexOf('!');
@@ -34,7 +30,7 @@ module.exports = function(source, sourceMap) {
 
 	var entryId = this.resourcePath;
 
-	getRollupInstance().rollup(Object.assign({}, options, {
+	rollup(Object.assign({}, options, {
 		input: entryId,
 		plugins: (options.plugins || []).concat({
 			resolveId: function(id, importerId) {
