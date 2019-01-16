@@ -80,7 +80,8 @@ module.exports = function(source, sourceMap) {
 		return bundle.generate({ format: 'es', sourcemap: this.sourceMap });
 	}.bind(this))
 	.then(function(result) {
-		callback(null, result.code, result.map);
+		var mainChunk = result.output[0];
+		callback(null, mainChunk.code, mainChunk.map);
 	}, function(err) {
 		callback(err);
 	});
