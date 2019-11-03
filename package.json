@@ -24,11 +24,11 @@
     "rollup": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^1.1.0",
+    "ava": "^2.4.0",
     "file-loader": "^3.0.1",
     "memory-fs": "^0.4.1",
-    "rollup": "^1.1.0",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "webpack": "^4.28.4"
+    "rollup": "^1.26.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "webpack": "^4.41.2"
   }
 }
