@@ -1,4 +1,4 @@
-# webpack-rollup-loader [![Build Status](https://travis-ci.org/erikdesjardins/webpack-rollup-loader.svg?branch=master)](https://travis-ci.org/erikdesjardins/webpack-rollup-loader)
+# webpack-rollup-loader
 
 Webpack loader that uses Rollup, which calls back into Webpack for module resolution.
 
