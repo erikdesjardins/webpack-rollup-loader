@@ -1,6 +1,6 @@
 {
   "name": "webpack-rollup-loader",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Webpack loader that uses Rollup, which calls back into Webpack for module resolution.",
   "main": "index.js",
   "scripts": {
